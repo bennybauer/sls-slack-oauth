@@ -16,14 +16,14 @@ class TestSlackOAuthIntegration(unittest.TestCase):
         cls.load_env_vars_from_json(vars_file_path)
 
     def test_invalid_client_id(self):
-        slack_oauth = SlackOAuth('token', 'client_id', 'client_secret')
+        slack_oauth = SlackOAuth('token', 'app_id', 'app_secret')
         with self.assertRaises(Exception) as e:
             slack_oauth.authorize('123123')
 
         self.assertEquals('invalid_client_id', e.exception.message)
 
     def test_invalid_client_secret(self):
-        slack_oauth = SlackOAuth('token', os.environ['SLACK_APP_ID'], 'client_secret')
+        slack_oauth = SlackOAuth('token', os.environ['SLACK_APP_ID'], 'app_secret')
         with self.assertRaises(Exception) as e:
             slack_oauth.authorize('123123')
 
