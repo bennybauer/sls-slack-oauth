@@ -1,7 +1,7 @@
 {
   "name": "slack-oauth",
   "runtime": "python2.7",
-  "description": "Serverless Lambda function for project: ketchapp",
+  "description": "Serverless Lambda function for project",
   "customName": false,
   "customRole": false,
   "handler": "slack-oauth/handler.handler",
